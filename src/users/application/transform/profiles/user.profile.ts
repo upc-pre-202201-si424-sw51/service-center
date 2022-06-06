@@ -15,6 +15,7 @@ export class UserProfile extends AutomapperProfile {
     return (mapper) => {
       createMap(mapper, User, UserDto);
       createMap(mapper, User, UserEntity);
+      createMap(mapper, UserEntity, User);
       createMap(mapper, CreateUserDto, User);
       createMap(mapper, UpdateUserDto, User);
     };
