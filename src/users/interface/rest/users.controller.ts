@@ -43,7 +43,7 @@ export class UsersController {
     const result = await this.usersService.create(user);
     const resource = this.mapper.map(user, User, UserDto);
     return {
-      statusCode: HttpStatus.OK,
+      statusCode: HttpStatus.CREATED,
       message: 'User created successfully',
       user: resource,
     };
@@ -94,7 +94,7 @@ export class UsersController {
   async deleteUser(@Param('id') id: number) {
     await this.usersService.delete(id);
     return {
-      statusCode: HttpStatus.OK,
+      statusCode: HttpStatus.NO_CONTENT,
       message: 'User deleted successfully',
     };
   }
